@@ -1,0 +1,101 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Wys!",
+  "scopeName": "source.wys",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#variableTypes"
+    },
+    {
+      "include": "#functionTypes"
+    },
+    {
+      "include": "#functionCalls"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#functionNames"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.wlang",
+          "match": "\\b(include|while|for|if|elif|else|function|var|import|try|catch|throw|struct|break|continue|return|end|int|float|double|char|bool|signed|unsigned|long|short|string|wstring|vector|true|false)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.wlang",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wlang",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.fdouble.wlang",
+          "begin": "f'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wlang",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.wlang",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "variableTypes": {
+      "patterns": [
+        {
+          "name": "variable.parameter.type.wlang",
+          "match": "(?<=: )\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*=[^=])"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.wlang",
+          "begin": "//",
+          "end": "$",
+          "comment": "Single-line comment"
+        }
+      ]
+    },
+    "functionNames": {
+      "patterns": [
+        {
+          "name": "entity.name.function.wlang",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b(?=\\s*\\()"
+        }
+      ]
+    }
+  }
+}
