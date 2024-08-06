@@ -17,8 +17,6 @@ Wys!.exe <input> <output>
 - `<input>`: Path to the source file.
 - `<output>`: Path to the output DLL file (optional).
 
-Ensure that the source file is in the same folder as the binaries for compilation. It is recommended to add this folder to the PATH for easier access to the compilation tools.
-
 ### Execution
 
 To run the generated DLL, use the provided loader:
@@ -28,8 +26,6 @@ Wloader!.exe <DLL>
 ```
 
 - `<DLL>`: Path to the DLL file to be executed.
-
-The DLL file must be located in the same folder as the loader binaries. Also, ensure that the binaries folder is in the PATH for easy access.
 
 ## Folder Structure
 
