@@ -33,7 +33,7 @@
       "patterns": [
         {
           "name": "keyword.control.wlang",
-          "match": "\\b(include|while|for|if|elif|else|function|var|import|try|catch|throw|struct|break|continue|return|end|int|float|double|char|bool|signed|unsigned|long|short|string|wstring|vector|true|false)\\b"
+          "match": "\\b(or|and|xor|not|include|while|for|if|elif|else|function|var|import|try|catch|throw|struct|break|continue|return|end|int|float|double|char|bool|signed|void|unsigned|long|short|string|wstring|vector|true|false)\\b"
         }
       ]
     },
@@ -66,8 +66,12 @@
     "numbers": {
       "patterns": [
         {
-          "name": "constant.numeric.wlang",
+          "name": "constant.numeric.integer.wlang",
           "match": "\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.float.wlang",
+          "match": "\\b\\d+\\.\\d+f?\\b|\\b\\d+f\\b"
         }
       ]
     },
