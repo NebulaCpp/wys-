@@ -208,3 +208,37 @@ void handle_break(std::istringstream &iss, std::ofstream &of)
 {
   of << Blank() << "break;\n";
 }
+
+void def_handles(std::unordered_map<std::string, std::function<void(std::istringstream &, std::ofstream &)>> &handlers)
+{
+  handlers["var"] = handle_var;
+  handlers["function"] = handle_func;
+  handlers["struct"] = handle_struct;
+  handlers["end"] = handle_end;
+  handlers["if"] = handle_if;
+  handlers["elif"] = handle_elif;
+  handlers["else"] = handle_else;
+  handlers["else:"] = handle_else;
+  handlers["include"] = handle_include;
+  handlers["throw"] = handle_throw;
+  handlers["for"] = handle_for;
+  handlers["while"] = handle_while;
+  handlers["try"] = handle_try;
+  handlers["try:"] = handle_try;
+  handlers["catch"] = handle_catch;
+  handlers["catch:"] = handle_catch;
+}
+
+void includes(std::ofstream &output_file)
+{
+  output_file
+      << "#include \"wlerror.hpp\"\n"
+      << "#include \"wlio.hpp\"\n"
+      << "#include \"wlvector.hpp\"\n"
+      << "#include \"wlmemory.hpp\"\n"
+      << "#include \"wlstring.hpp\"\n"
+      << "#include \"wltype.hpp\"\n"
+      << "#include \"wlutiles.hpp\"\n"
+      << "using namespace wys;\n"
+      << "extern \"C\" {\n";
+}

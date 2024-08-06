@@ -229,7 +229,7 @@ namespace wys
     }
   }
 
-  basic_string<char> long_double_to_string(long double value)
+  basic_string<char> float_to_string(long double value)
   {
     static char str[50];
     int i = 0;
@@ -323,7 +323,7 @@ namespace wys
     return str;
   }
 
-  basic_string<char> unsigned_long_long_to_string(unsigned long long value)
+  basic_string<char> uint_to_string(unsigned long long value)
   {
     static char str[25];
     int i = 0;
@@ -367,7 +367,7 @@ namespace wys
     }
   }
 
-  basic_string<wchar_t> long_double_to_wstring(long double value)
+  basic_string<wchar_t> float_to_wstring(long double value)
   {
     static wchar_t str[50];
     int i = 0;
@@ -419,7 +419,7 @@ namespace wys
     return basic_string<wchar_t>(str);
   } 
 
-  basic_string<wchar_t> long_long_to_wstring(long long value)
+  basic_string<wchar_t> int_to_wstring(long long value)
   {
     static wchar_t str[25];
     int i = 0;
@@ -461,7 +461,7 @@ namespace wys
     return basic_string<wchar_t>(str);
   }
 
-  basic_string<wchar_t> unsigned_long_long_to_wstring(unsigned long long value)
+  basic_string<wchar_t> uint_to_wstring(unsigned long long value)
   {
     static wchar_t str[25];
     int i = 0;
