@@ -11,7 +11,7 @@ Welcome to the documentation for Wys!. This language is designed to be simple an
 To compile source code written in Wys!, use the provided compiler tool:
 
 ```bash
-Wys!.exe <input> <output>
+wlang.exe <input> <output>
 ```
 
 - `<input>`: Path to the source file.
@@ -22,7 +22,7 @@ Wys!.exe <input> <output>
 To run the generated DLL, use the provided loader:
 
 ```bash
-Wloader!.exe <DLL>
+wloader.exe <DLL>
 ```
 
 - `<DLL>`: Path to the DLL file to be executed.
