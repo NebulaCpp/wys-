@@ -17,15 +17,15 @@ namespace wys
     WriteConsoleA(hCons, _Str.c_str(), _Str.size(), &bytesWritten, NULL);
   }
 
-  struct file
+  struct wfile
   {
     HANDLE handle;
     bool isOpen;
 
-    file() : handle(INVALID_HANDLE_VALUE), isOpen(false) {}
+    wfile() : handle(INVALID_HANDLE_VALUE), isOpen(false) {}
   };
 
-  bool open(file &file, const wys::string &filePath, bool createIfNotExist = true)
+  bool open(wfile &file, const wys::string &filePath, bool createIfNotExist = true)
   {
     DWORD dwDesiredAccess = GENERIC_READ | GENERIC_WRITE;
     DWORD dwShareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
@@ -45,7 +45,7 @@ namespace wys
     return file.isOpen;
   }
 
-  void close(file &file)
+  void close(wfile &file)
   {
     if (file.isOpen)
     {
@@ -54,7 +54,7 @@ namespace wys
     }
   }
 
-  string read(file &file)
+  string read(wfile &file)
   {
     if (!file.isOpen)
     {
@@ -105,7 +105,7 @@ namespace wys
     return result;
   }
 
-  string getline(file &file)
+  string getline(wfile &file)
   {
     if (!file.isOpen)
     {
@@ -250,7 +250,7 @@ namespace wys
     return resultString;
   }
 
-  bool write(file &file, const string &_Str)
+  bool write(wfile &file, const string &_Str)
   {
     if (!file.isOpen)
     {
@@ -366,7 +366,7 @@ namespace wys
     WriteConsoleW(hCons, _Str.c_str(), _Str.size(), &bytesWritten, NULL);
   }
 
-  bool wopen(file &file, const wstring &filePath, bool createIfNotExist = true)
+  bool wopen(wfile &file, const wstring &filePath, bool createIfNotExist = true)
   {
     DWORD dwDesiredAccess = GENERIC_READ | GENERIC_WRITE;
     DWORD dwShareMode = FILE_SHARE_READ | FILE_SHARE_WRITE;
@@ -386,7 +386,7 @@ namespace wys
     return file.isOpen;
   }
 
-  wstring wread(file &file)
+  wstring wread(wfile &file)
   {
     if (!file.isOpen)
     {
@@ -437,7 +437,7 @@ namespace wys
     return result;
   }
 
-  wstring wgetline(file &file)
+  wstring wgetline(wfile &file)
   {
     if (!file.isOpen)
     {
@@ -488,7 +488,7 @@ namespace wys
     return result;
   }
 
-  bool wwrite(file &file, const wstring &_Str)
+  bool wwrite(wfile &file, const wstring &_Str)
   {
     if (!file.isOpen)
     {
